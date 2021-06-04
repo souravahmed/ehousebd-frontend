@@ -1,0 +1,9 @@
+.hr-line {
+  width: 60px;
+  background-color: #7c4dff;
+  height: 2px;
+}
+
+.copy-right-bg-color {
+  background-color: rgba(0, 0, 0, 0.2);
+}

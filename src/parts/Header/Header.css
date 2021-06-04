@@ -1,0 +1,20 @@
+.navbar-bg {
+  background-color: #faf2f3;
+}
+
+.badge-align-top {
+  vertical-align: top;
+  float: right;
+}
+
+.login-span {
+  padding-left: 10px;
+}
+
+.margin-right {
+  margin-right: 5px;
+}
+
+.login-link {
+  text-decoration: none;
+}
