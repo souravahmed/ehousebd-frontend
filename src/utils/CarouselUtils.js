@@ -1,7 +1,7 @@
 const CarouselUtils = {
   convertProductBanner: (banners) => {
     let imagesPath = [];
-    banners.map((banner) => {
+    banners?.map((banner) => {
       imagesPath.push(banner.banner_path);
       return imagesPath;
     });

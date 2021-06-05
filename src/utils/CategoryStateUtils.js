@@ -3,7 +3,7 @@ const CategoryStateUtils = {
     const category = categoryState.categories.find(
       (category) => category.slug === slug
     );
-    return category.name;
+    return category?.name;
   },
 };
 

@@ -24,6 +24,7 @@ const ProductSection = ({ products, sectionTitle }) => {
             <div className="card-body">
               <h5 className="card-title">{product.display_name}</h5>
               <p className="card-text">{product.short_description}</p>
+              <p className="h6">Price: {product.price} TK </p>
             </div>
           </div>
         ))}
