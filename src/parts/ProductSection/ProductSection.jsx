@@ -13,8 +13,8 @@ const ProductSection = ({ products, sectionTitle }) => {
         <h3>{sectionTitle}</h3>
       </div>
       <div className="d-flex flex-wrap">
-        {products.map((product, index) => (
-          <div key={index} className="card card-width">
+        {products?.map((product, index) => (
+          <div key={index} className="card custom-card">
             <Carousel
               imagesPath={CarouselUtils.convertProductImages(
                 product.product_image_gallery

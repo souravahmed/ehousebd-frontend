@@ -18,7 +18,7 @@ const SideNav = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <>
       {categoryState?.loading ? (
         <Loader />
       ) : (
@@ -29,7 +29,11 @@ const SideNav = () => {
             </div>
             <li className="nav-item">
               {categoryState?.categories?.map((category, index) => (
-                <NavLink className="nav-link" key={index} to="/">
+                <NavLink
+                  className="nav-link"
+                  key={index}
+                  to={"/category/" + category.slug}
+                >
                   {category.name}
                 </NavLink>
               ))}
@@ -39,11 +43,14 @@ const SideNav = () => {
             imagesPath={CarouselUtils.convertProductBanner(
               productBannerState.productBanners
             )}
-            inlineImageCss={{ objectFit: "fill", height: "400px" }}
+            inlineImageCss={{
+              objectFit: "fill",
+              height: "400px",
+            }}
           />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

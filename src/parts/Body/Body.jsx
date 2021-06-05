@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ProductSection from "../ProductSection/ProductSection";
-import SideNav from "../SideNav/SideNav";
+
 import { useSelector, useDispatch } from "react-redux";
 import { getLatestProducts } from "../../redux";
 import Loader from "../../components/Loader";
@@ -12,8 +12,7 @@ const Body = () => {
     dispatch(getLatestProducts());
   }, [dispatch]);
   return (
-    <div>
-      <SideNav />
+    <>
       {productState.loading ? (
         <Loader />
       ) : (
@@ -22,7 +21,7 @@ const Body = () => {
           sectionTitle="Latest Products"
         />
       )}
-    </div>
+    </>
   );
 };
 
