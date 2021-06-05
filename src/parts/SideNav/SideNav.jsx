@@ -18,7 +18,7 @@ const SideNav = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="container">
       {categoryState?.loading ? (
         <Loader />
       ) : (
@@ -50,7 +50,7 @@ const SideNav = () => {
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
