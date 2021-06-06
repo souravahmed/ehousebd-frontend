@@ -41,7 +41,7 @@ const SideNav = () => {
           </ul>
           <Carousel
             imagesPath={CarouselUtils.convertProductBanner(
-              productBannerState.productBanners
+              productBannerState?.productBanners
             )}
             inlineImageCss={{
               objectFit: "fill",

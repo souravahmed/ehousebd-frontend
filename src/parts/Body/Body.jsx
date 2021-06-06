@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import ProductSection from "../ProductSection/ProductSection";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getLatestProducts } from "../../redux";
+import { getProducts } from "../../redux";
 import Loader from "../../components/Loader";
 
 const Body = () => {
   const productState = useSelector((state) => state.product);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getLatestProducts());
+    dispatch(getProducts());
   }, [dispatch]);
   return (
     <>
@@ -17,7 +17,7 @@ const Body = () => {
         <Loader />
       ) : (
         <ProductSection
-          products={productState?.latestProducts}
+          products={productState?.products}
           sectionTitle="Latest Products"
         />
       )}

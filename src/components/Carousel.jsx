@@ -6,24 +6,18 @@ const Carousel = ({ imagesPath, inlineImageCss }) => {
   return (
     <div
       id={carouselId}
-      className="carousel slide"
+      className="carousel slide shadow"
       data-bs-interval="2000"
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
         <div className="carousel-item active">
-          {imagesPath.map(
-            (imagePath, index) =>
-              index === 0 && (
-                <img
-                  key={index}
-                  src={UrlUtils.joinMediaUrl(imagePath)}
-                  alt={"image-" + index}
-                  className="d-block w-100"
-                  style={inlineImageCss}
-                />
-              )
-          )}
+          <img
+            src={UrlUtils.joinMediaUrl(imagesPath[0]?.path)}
+            alt={imagesPath[0]?.alt}
+            className="d-block w-100"
+            style={inlineImageCss}
+          />
         </div>
 
         {imagesPath.map(
@@ -31,8 +25,8 @@ const Carousel = ({ imagesPath, inlineImageCss }) => {
             index !== 0 && (
               <div key={index} className="carousel-item">
                 <img
-                  src={UrlUtils.joinMediaUrl(imagePath)}
-                  alt={"image-" + index}
+                  src={UrlUtils.joinMediaUrl(imagePath.path)}
+                  alt={imagePath.alt}
                   className="d-block w-100"
                   style={inlineImageCss}
                 />

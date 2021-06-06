@@ -22,6 +22,7 @@ npm start
 - products section
 - re-useable product slide-show
 - loader
+- re-useable dropdown filter
 
 ### `npm start`
 

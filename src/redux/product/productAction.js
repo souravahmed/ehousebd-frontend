@@ -1,71 +1,46 @@
 import {
-  FETCH_LATEST_PRODUCTS_FAILED,
-  FETCH_LATEST_PRODUCTS_REQUEST,
-  FETCH_LATEST_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_BY_CATEGORY_FAILED,
-  FETCH_PRODUCTS_BY_CATEGORY_REQUEST,
-  FETCH_PRODUCTS_BY_CATEGORY_SUCCESS,
+  FETCH_PRODUCTS_REQUEST,
+  FETCH_PRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_FAILED,
 } from "./productActionType";
 import ProductService from "../../services/ProductService";
 
-const fetchLatestProductsRequest = () => {
+const fetchProductsRequest = () => {
   return {
-    type: FETCH_LATEST_PRODUCTS_REQUEST,
+    type: FETCH_PRODUCTS_REQUEST,
   };
 };
 
-const fetchLatestProductsSuccess = (data) => {
+const fetchProductsSuccess = (data) => {
   return {
-    type: FETCH_LATEST_PRODUCTS_SUCCESS,
+    type: FETCH_PRODUCTS_SUCCESS,
     payload: data,
   };
 };
 
-const fetchLatestProductsFailed = (error) => {
+const fetchProductsFailed = (error) => {
   return {
-    type: FETCH_LATEST_PRODUCTS_FAILED,
+    type: FETCH_PRODUCTS_FAILED,
     error: error,
   };
 };
 
-const fetchProductsByCategoryRequest = () => {
-  return {
-    type: FETCH_PRODUCTS_BY_CATEGORY_REQUEST,
-  };
-};
-const fetchProductsByCategorySuccess = (data) => {
-  return {
-    type: FETCH_PRODUCTS_BY_CATEGORY_SUCCESS,
-    payload: data,
-  };
-};
-const fetchProductsByCategoryFailed = (error) => {
-  return {
-    type: FETCH_PRODUCTS_BY_CATEGORY_FAILED,
-    error: error,
-  };
-};
-
-export const getLatestProducts = () => {
+export const getProducts = ({
+  sortBy = "",
+  orderBy = "",
+  filterBy = "",
+} = {}) => {
   return async (dispatch) => {
-    dispatch(fetchLatestProductsRequest());
+    dispatch(fetchProductsRequest());
     try {
-      const data = await ProductService.getLatestProducts();
-      dispatch(fetchLatestProductsSuccess(data));
+      const data = await ProductService.getProducts({
+        sortBy: sortBy,
+        orderBy: orderBy,
+        filterBy: filterBy,
+      });
+      dispatch(fetchProductsSuccess(data));
     } catch (error) {
-      dispatch(fetchLatestProductsFailed(error));
-    }
-  };
-};
-
-export const getProductsByCategory = (categorySlug) => {
-  return async (dispatch) => {
-    dispatch(fetchProductsByCategoryRequest());
-    try {
-      const data = await ProductService.getProductsByCategory(categorySlug);
-      dispatch(fetchProductsByCategorySuccess(data));
-    } catch (error) {
-      dispatch(fetchProductsByCategoryFailed(error));
+      dispatch(fetchProductsFailed(error));
     }
   };
 };

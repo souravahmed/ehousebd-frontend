@@ -1,17 +1,14 @@
 import axios from "./config";
 
 const ProductService = {
-  getLatestProducts: async () => {
+  getProducts: async ({ sortBy, orderBy, filterBy } = {}) => {
     try {
-      const { data } = await axios.get("products");
-      return data;
-    } catch (error) {
-      throw error;
-    }
-  },
-  getProductsByCategory: async (categorySlug) => {
-    try {
-      const { data } = await axios.get(`products/${categorySlug}`);
+      const { data } = await axios.get(
+        `products/?sort_by=${sortBy}&order_by=${orderBy}&filter_by=${filterBy}`
+      );
+      console.log(sortBy);
+      console.log(orderBy);
+      console.log(filterBy);
       return data;
     } catch (error) {
       throw error;
