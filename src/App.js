@@ -1,27 +1,25 @@
 import "./App.css";
 import HomePage from "./pages/Home/HomePage";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Switch } from "react-router-dom";
-import CategoryPage from "./pages/Category/CategoryPage";
-import Footer from "./parts/Footer/Footer";
+import { Switch, Route } from "react-router-dom";
 import Header from "./parts/Header/Header";
-import SideNav from "./parts/SideNav/SideNav";
+import Footer from "./parts/Footer/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import CategoryPage from "./pages/Category/CategoryPage";
 
 function App() {
   return (
     <div className="container">
       <Header />
-      <SideNav />
       <Switch>
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route
-          exact
-          path="/category/:categorySlug"
-          children={<CategoryPage />}
-        />
+        <Route exact path="/category/:categorySlug">
+          <CategoryPage />
+        </Route>
       </Switch>
+
       <Footer />
     </div>
   );

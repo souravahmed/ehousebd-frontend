@@ -7,6 +7,7 @@ import Loader from "../../components/Loader";
 import CategoryStateUtils from "../../utils/CategoryStateUtils";
 import DropDownFilter from "../../components/DropDownFilter";
 import DropDownUtils from "../../utils/DropDownUtils";
+import SideNav from "../../parts/SideNav/SideNav";
 
 const CategoryPage = () => {
   const { categorySlug } = useParams();
@@ -35,16 +36,19 @@ const CategoryPage = () => {
         <Loader />
       ) : (
         <div className="container">
-          <div className="d-flex mt-4 justify-content-end">
-            <div className="me-2">
-              <h4>Sort By:</h4>
-            </div>
-            <div>
-              <DropDownFilter
-                dropdownOptions={DropDownUtils.generateDefaultOptions()}
-                callback={handleOnChange}
-                value={orderByAscOrDesc}
-              />
+          <div className="d-flex mt-2 justify-content-between">
+            <SideNav />
+            <div className="d-flex ">
+              <div className="me-2">
+                <h5>Sort By:</h5>
+              </div>
+              <div className="ms-2">
+                <DropDownFilter
+                  dropdownOptions={DropDownUtils.generateDefaultOptions()}
+                  callback={handleOnChange}
+                  value={orderByAscOrDesc}
+                />
+              </div>
             </div>
           </div>
           <ProductSection

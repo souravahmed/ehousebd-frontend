@@ -2,23 +2,21 @@ import React from "react";
 import "../../parts/SideNav/SideNav.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getCategories, getProductBanners } from "../../redux";
+import { getCategories } from "../../redux";
 import Loader from "../../components/Loader";
-import Carousel from "../../components/Carousel";
-import CarouselUtils from "../../utils/CarouselUtils";
 import { NavLink } from "react-router-dom";
 
 const SideNav = () => {
   const categoryState = useSelector((state) => state.category);
-  const productBannerState = useSelector((state) => state.productBanner);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    Promise.all([dispatch(getCategories()), dispatch(getProductBanners())]);
+    dispatch(getCategories());
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <>
       {categoryState?.loading ? (
         <Loader />
       ) : (
@@ -39,18 +37,9 @@ const SideNav = () => {
               ))}
             </li>
           </ul>
-          <Carousel
-            imagesPath={CarouselUtils.convertProductBanner(
-              productBannerState?.productBanners
-            )}
-            inlineImageCss={{
-              objectFit: "fill",
-              height: "400px",
-            }}
-          />
         </div>
       )}
-    </div>
+    </>
   );
 };
 
