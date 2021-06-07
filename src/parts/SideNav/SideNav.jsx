@@ -29,6 +29,7 @@ const SideNav = () => {
               {categoryState?.categories?.map((category, index) => (
                 <NavLink
                   className="nav-link"
+                  activeClassName="nav-active"
                   key={index}
                   to={"/category/" + category.slug}
                 >
