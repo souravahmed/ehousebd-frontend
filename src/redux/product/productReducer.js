@@ -6,7 +6,6 @@ import {
 
 const initialState = {
   loading: false,
-  products: [],
   error: "",
 };
 
@@ -18,10 +17,11 @@ export const productReducer = (state = initialState, action) => {
         loading: true,
       };
     case FETCH_PRODUCTS_SUCCESS:
+      const slug = action.category_slug;
       return {
         ...state,
         loading: false,
-        products: action.payload,
+        [`${slug}`]: action.payload,
       };
     case FETCH_PRODUCTS_FAILED:
       return {

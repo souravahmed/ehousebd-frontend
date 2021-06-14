@@ -11,9 +11,10 @@ const fetchProductsRequest = () => {
   };
 };
 
-const fetchProductsSuccess = (data) => {
+const fetchProductsSuccess = (data, category_slug) => {
   return {
     type: FETCH_PRODUCTS_SUCCESS,
+    category_slug: category_slug,
     payload: data,
   };
 };
@@ -29,6 +30,7 @@ export const getProducts = ({
   sortBy = "",
   orderBy = "",
   filterBy = "",
+  category_slug = "",
 } = {}) => {
   return async (dispatch) => {
     dispatch(fetchProductsRequest());
@@ -37,8 +39,9 @@ export const getProducts = ({
         sortBy: sortBy,
         orderBy: orderBy,
         filterBy: filterBy,
+        category_slug: category_slug,
       });
-      dispatch(fetchProductsSuccess(data));
+      dispatch(fetchProductsSuccess(data, category_slug));
     } catch (error) {
       dispatch(fetchProductsFailed(error));
     }

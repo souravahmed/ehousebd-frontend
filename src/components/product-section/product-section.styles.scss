@@ -1,0 +1,11 @@
+@import "../../var";
+
+.product-section {
+  .product-section__title {
+    width: 500px;
+    margin: 2rem auto;
+    border-bottom: 5px solid $secondary-color;
+    text-align: center;
+    font-size: 2rem;
+  }
+}

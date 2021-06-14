@@ -1,11 +1,10 @@
-import "./App.css";
-import HomePage from "./pages/Home/HomePage";
-import { Switch, Route } from "react-router-dom";
-import Header from "./parts/Header/Header";
-import Footer from "./parts/Footer/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
-import CategoryPage from "./pages/Category/CategoryPage";
+import { Switch, Route } from "react-router-dom";
+
+import Header from "./components/header/header.component";
+import Footer from "./components/footer/footer.component";
+import HomePage from "./pages/homepage/homepage.component";
 
 function App() {
   return (
@@ -15,11 +14,7 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/category/:categorySlug">
-          <CategoryPage />
-        </Route>
       </Switch>
-
       <Footer />
     </div>
   );
