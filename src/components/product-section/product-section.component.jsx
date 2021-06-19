@@ -8,7 +8,7 @@ const ProductSection = ({ category }) => {
       <div className="product-section__title">
         <h3>{category.name}</h3>
       </div>
-      <ProductList category={category} />
+      <ProductList category_slug={category.slug} />
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import logo from "../../assets/logo.svg";
 import "./header.styles.scss";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../redux";
+import Menu from "../menu/menu.component";
+import Search from "../search/search.components";
 
 const Header = () => {
   const categoriesState = useSelector((state) => state.category);
@@ -29,35 +30,16 @@ const Header = () => {
 
   return (
     <header className="header" id="header">
-      <div className="logo-container">
-        <img src={logo} alt="ehousebd" />
+      <div className="header__left">
+        <img src={logo} alt="Logo" />
       </div>
-      <div className="header-center">
-        <input className="text" type="text" placeholder="Search product here" />
-
-        <div className="hamburger">
-          <i className="fas fa-bars fa-x"></i>
-        </div>
-        <nav className="nav">
-          <ul className="nav__list">
-            {categoriesState.loading === false &&
-              categoriesState.categories.map((category, index) => (
-                <li key={index}>
-                  <Link to={`/category/${category.slug}`}>{category.name}</Link>
-                </li>
-              ))}
-          </ul>
+      <div className="header__center">
+        <Search />
+        <nav>
+          <Menu items={categoriesState.categories} />
         </nav>
       </div>
-      <div className="header-right">
-        <div className="login">
-          <i className="far fa-user fa-2x"></i>
-        </div>
-        <div className="cart">
-          <i className="fas fa-shopping-bag fa-2x"></i>
-          <span className="badge">5</span>
-        </div>
-      </div>
+      <div className="header__right"></div>
     </header>
   );
 };

@@ -3,7 +3,7 @@ import axios from "./config";
 const CategoryService = {
   getCategories: async () => {
     try {
-      const { data } = await axios.get("product_categories");
+      const { data } = await axios.get("categories");
       return data;
     } catch (error) {
       throw error;

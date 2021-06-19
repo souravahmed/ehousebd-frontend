@@ -4,10 +4,9 @@ import { getProducts } from "../../redux/product/productAction";
 import ProductCard from "../product-card/product-card.component";
 import "./product-list.styles.scss";
 
-const ProductList = ({ category }) => {
+const ProductList = ({ category_slug }) => {
   const productState = useSelector((state) => state.product);
   const dispatch = useDispatch();
-  const category_slug = category.slug;
 
   useEffect(() => {
     dispatch(getProducts({ category_slug: category_slug }));

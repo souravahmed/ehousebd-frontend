@@ -21,7 +21,7 @@ const fetchProductBannerSuccess = (data) => {
 const fetchProductBannerFailed = (error) => {
   return {
     type: FETCH_PRODUCT_BANNER_FAILED,
-    payload: error,
+    error: error,
   };
 };
 

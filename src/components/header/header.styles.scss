@@ -1,3 +1,5 @@
+@import "../../var";
+
 .sticky {
   position: sticky;
   top: 0;
@@ -6,65 +8,30 @@
 
 .header {
   display: flex;
-  align-items: center;
-  position: sticky;
   justify-content: space-between;
-  background-color: whitesmoke;
-  padding-left: 20px;
+  align-items: center;
+  background-color: $fifth-color;
 
-  .logo-container {
-    margin-right: 0.5rem;
+  &__left {
+    padding-left: 10px;
+    cursor: pointer;
+
     img {
       width: 80px;
       height: 80px;
     }
   }
-
-  .header-center {
+  &__center {
+    flex-basis: 70%;
     display: flex;
-    align-items: center;
-    flex-basis: 60%;
-
-    .text {
-      width: 400px;
-    }
-
-    .nav {
-      display: none;
-      .nav__list {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        li {
-          margin-left: 20px;
-        }
-        li a:hover {
-          border-bottom: 3px solid darkcyan;
-        }
-      }
-    }
-    @media screen and (min-width: 600px) {
-      .nav {
-        display: block;
-      }
-      .hamburger {
-        display: none;
-      }
-    }
-
-    .hamburger {
-      cursor: pointer;
-    }
-  }
-  .header-right {
-    display: flex;
-    flex-basis: 5%;
     align-items: center;
     justify-content: space-between;
-    margin-right: 20px;
 
-    .login {
-      margin-right: 1rem;
+    nav {
+      flex-basis: 60%;
     }
+  }
+  &__right {
+    background-color: blanchedalmond;
   }
 }

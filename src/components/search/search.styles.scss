@@ -1,0 +1,32 @@
+$border-radius: 5px;
+
+.search-box {
+  width: 50%;
+  height: 45px;
+  position: relative;
+  display: flex;
+
+  &__bar {
+    width: 100%;
+
+    input {
+      height: 45px;
+      width: 100%;
+      font-size: 15px;
+      outline: none;
+      border: none;
+      border-radius: $border-radius;
+      padding-left: 10px;
+    }
+  }
+  &__search {
+    button {
+      height: 45px;
+      width: 45px;
+      border-radius: $border-radius;
+      border: none;
+      cursor: pointer;
+      background-color: gold;
+    }
+  }
+}
