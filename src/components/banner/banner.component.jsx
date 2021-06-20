@@ -4,9 +4,10 @@ import { getProductBanners } from "../../redux";
 import UrlUtils from "../../utils/UrlUtils";
 import CarouselUtils from "../../utils/CarouselUtils";
 import "./banner.styles.scss";
+import Loader from "../loader/loader.component";
 
 const Banner = () => {
-  const productBannerState = useSelector((state) => state.productBanner);
+  const bannerState = useSelector((state) => state.banner);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,15 +16,18 @@ const Banner = () => {
 
   return (
     <section className="hero">
-      {productBannerState.loading === false && (
-        <img
-          src={UrlUtils.joinMediaUrl(
-            productBannerState?.productBanners[0]?.banner_path
-          )}
-          alt={CarouselUtils.getImageNameFromPath(
-            productBannerState?.productBanners[0]?.banner_path
-          )}
-        />
+      {bannerState.loading ? (
+        <Loader />
+      ) : (
+        <>
+          {bannerState?.banners.map((banner, index) => (
+            <img
+              key={index}
+              src={UrlUtils.joinMediaUrl(banner.image_path)}
+              alt={CarouselUtils.getImageNameFromPath(banner.image_path)}
+            />
+          ))}
+        </>
       )}
     </section>
   );

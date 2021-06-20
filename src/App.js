@@ -11,14 +11,14 @@ function App() {
   return (
     <div className="container">
       <Header />
-      {/* <Switch>
+      <Switch>
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/category/:categorySlug">
+        <Route path="/:categorySlug">
           <CategoryPage />
         </Route>
-      </Switch> */}
+      </Switch>
       <Footer />
     </div>
   );

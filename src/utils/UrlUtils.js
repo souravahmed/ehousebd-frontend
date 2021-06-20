@@ -8,8 +8,11 @@ const UrlUtils = {
     return domain + path;
   },
 
-  getCarouselId: () => {
-    return "carousel_" + Math.random().toString(36).substr(2, 5);
+  getUrlLastPath: (path) => {
+    console.log(path);
+    const index = path.lastIndexOf("/");
+    console.log(path.substring(0, index));
+    return path.substring(0, index);
   },
 };
 

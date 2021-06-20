@@ -1,9 +1,9 @@
 import axios from "./config";
 
-const ProductBannerService = {
+const BannerService = {
   getBanners: async () => {
     try {
-      const { data } = await axios.get("product_banners");
+      const { data } = await axios.get("banners");
       return data;
     } catch (error) {
       throw error;
@@ -11,4 +11,4 @@ const ProductBannerService = {
   },
 };
 
-export default ProductBannerService;
+export default BannerService;

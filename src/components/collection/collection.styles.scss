@@ -1,0 +1,42 @@
+@import "../../var";
+
+$border-radius: 5px;
+
+.cl-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .cl-container__title {
+    margin-bottom: 10px;
+  }
+  .cl__collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .collection__item {
+      border-radius: $border-radius;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 200px;
+      height: 200px;
+
+      img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        border-radius: $border-radius;
+      }
+      &:hover {
+        box-shadow: $box-shadow;
+      }
+      h4 {
+        margin: 5px;
+      }
+    }
+  }
+}

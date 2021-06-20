@@ -85,14 +85,16 @@ const Footer = () => {
           </p>
           <div className="news-letter__form">
             <form action="" method="POST">
-              <input
-                className="form-control"
-                placeholder="Email address"
-                type="email"
-              />
-              <button className="btn btn-pill" type="submit">
-                Submit
-              </button>
+              <div className="form-group">
+                <input
+                  className="form-control"
+                  placeholder="Email address"
+                  type="email"
+                />
+                <button className="btn btn-pill btn-primary" type="submit">
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>

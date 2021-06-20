@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../redux";
 import Menu from "../menu/menu.component";
 import Search from "../search/search.components";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const categoriesState = useSelector((state) => state.category);
@@ -31,7 +32,9 @@ const Header = () => {
   return (
     <header className="header" id="header">
       <div className="header__left">
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
       <div className="header__center">
         <Search />
@@ -39,7 +42,15 @@ const Header = () => {
           <Menu items={categoriesState.categories} />
         </nav>
       </div>
-      <div className="header__right"></div>
+      <div className="header__right">
+        <Link to="">
+          <i className="far fa-user fa-2x"></i>
+        </Link>
+        <Link to="">
+          <i className="fas fa-shopping-cart fa-2x"></i>
+          <span className="badge">4</span>
+        </Link>
+      </div>
     </header>
   );
 };

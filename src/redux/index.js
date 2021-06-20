@@ -1,4 +1,6 @@
-export { getCategories } from "./category/categoryAction";
-export { getProductBanners } from "./product_banner/productBannerAction";
+export {
+  getCategories,
+  getFeaturedCategories,
+} from "./category/categoryAction";
+export { getProductBanners } from "./banner/bannerAction";
 export { getProducts } from "./product/productAction";
-export { getProductVariantsByCategorySlug } from "./product_variant/variantAction";

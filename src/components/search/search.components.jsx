@@ -5,11 +5,11 @@ const Search = () => {
   return (
     <div className="search-box">
       <div className="search-box__bar">
-        <input type="search" />
+        <input type="search" placeholder="Search here" />
       </div>
       <div className="search-box__search">
         <button>
-          <i class="fas fa-search fa-2x"></i>
+          <i className="fas fa-search fa-2x"></i>
         </button>
       </div>
     </div>
