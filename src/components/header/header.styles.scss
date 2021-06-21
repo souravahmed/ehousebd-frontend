@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: $fifth-color;
+  z-index: 1;
 
   &__left {
     padding-left: 10px;
@@ -22,13 +23,12 @@
     }
   }
   &__center {
-    flex-basis: 70%;
+    flex-basis: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     nav {
-      flex-basis: 60%;
+      flex-basis: 90%;
     }
   }
   &__right {

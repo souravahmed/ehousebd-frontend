@@ -11,7 +11,7 @@ const Collection = ({ title, collection }) => {
       </div>
       <div className="cl__collection">
         {collection?.map((item) => (
-          <div key={item.id} className="collection__item">
+          <div key={item.id} className="collection__item item--zoom">
             <Link to={item.slug}>
               <img
                 src={UrlUtils.joinMediaUrl(item.image_path)}

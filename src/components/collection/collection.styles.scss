@@ -24,6 +24,7 @@ $border-radius: 5px;
       margin-left: 10px;
       width: 200px;
       height: 200px;
+      transition: transform 0.5s;
 
       img {
         width: 150px;
@@ -31,8 +32,11 @@ $border-radius: 5px;
         object-fit: contain;
         border-radius: $border-radius;
       }
-      &:hover {
+      &.item--border:hover {
         box-shadow: $box-shadow;
+      }
+      &.item--zoom:hover {
+        transform: scale(1.2);
       }
       h4 {
         margin: 5px;

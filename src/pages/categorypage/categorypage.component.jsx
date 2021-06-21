@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 //import { useDispatch, useSelector } from "react-redux";
 
 //import Filter from "../../components/filter/filter.component";
-import ProductList from "../../components/product-list/product-list.component";
+//import ProductList from "../../components/product-list/product-list.component";
 //import CommonUtils from "../../utils/CommonUtils";
 import "./categorypage.styles.scss";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
@@ -39,7 +39,7 @@ const CategoryPage = () => {
       <h1>{categorySlug}</h1>
       <Switch>
         <Route path={`${path}/:categorySlug`}>
-          <ProductList />
+          <CategoryPage />
         </Route>
       </Switch>
     </div>

@@ -48,7 +48,7 @@ const Header = () => {
         </Link>
         <Link to="">
           <i className="fas fa-shopping-cart fa-2x"></i>
-          <span className="badge">4</span>
+          <span className="badge">0</span>
         </Link>
       </div>
     </header>

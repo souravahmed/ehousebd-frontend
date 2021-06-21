@@ -1,13 +1,14 @@
 @import "../../var";
 .nav-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+
   font-weight: 600;
   .nav-list__drop {
     padding: 10px;
     position: absolute;
     background-color: white;
-    font-size: 13px;
+    font-size: 12px;
     width: 100%;
     box-shadow: $box-show-header;
     display: none;
@@ -26,15 +27,11 @@
       text-align: center;
     }
 
-    a:hover {
-      background-color: $third-color;
-      outline: none;
-    }
-
     &:hover {
       .nav-list__drop {
         display: block;
         li:hover {
+          background-color: $third-color;
           ul {
             display: block;
             top: 0;
