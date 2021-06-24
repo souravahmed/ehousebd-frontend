@@ -6,6 +6,7 @@ import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage/homepage.component";
 import CategoryPage from "./pages/categorypage/categorypage.component";
+import BrandPage from "./pages/brandpage/brandpage.component";
 
 function App() {
   return (
@@ -15,8 +16,11 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/:categorySlug">
+        <Route path="/categories/:categorySlug">
           <CategoryPage />
+        </Route>
+        <Route path="/brands/:brandSlug">
+          <BrandPage />
         </Route>
       </Switch>
       <Footer />

@@ -3,7 +3,7 @@ import UrlUtils from "../../utils/UrlUtils";
 import "./collection.styles.scss";
 import { Link } from "react-router-dom";
 
-const Collection = ({ title, collection }) => {
+const Collection = ({ title, collection, collection_type }) => {
   return (
     <div className="cl-container">
       <div className="cl-container__title">
@@ -12,7 +12,7 @@ const Collection = ({ title, collection }) => {
       <div className="cl__collection">
         {collection?.map((item) => (
           <div key={item.id} className="collection__item item--zoom">
-            <Link to={item.slug}>
+            <Link to={`${collection_type}/${item.slug}`}>
               <img
                 src={UrlUtils.joinMediaUrl(item.image_path)}
                 alt={item.name}

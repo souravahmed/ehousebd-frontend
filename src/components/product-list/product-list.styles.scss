@@ -1,7 +1,9 @@
 .product-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  .product-collection {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
 }

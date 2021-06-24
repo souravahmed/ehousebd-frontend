@@ -3,5 +3,10 @@ export {
   getFeaturedCategories,
 } from "./category/categoryAction";
 export { getProductBanners } from "./banner/bannerAction";
-export { getProducts } from "./product/productAction";
+export {
+  getProducts,
+  getFeaturedProducts,
+  getBrandProducts,
+  getProductFilters,
+} from "./product/productAction";
 export { getBrands } from "./brand/brandAction";

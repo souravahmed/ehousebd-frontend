@@ -2,9 +2,12 @@
 
 .product-card {
   flex-basis: 10%;
-  box-shadow: $box-shadow;
   border-radius: 10px;
-  margin: 10px 20px;
+  margin: 10px 10px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: $box-shadow;
+  }
   .product-card__image img {
     width: 300px;
     height: 300px;

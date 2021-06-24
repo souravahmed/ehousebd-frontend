@@ -10,6 +10,7 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 const CategoryPage = () => {
   const { categorySlug } = useParams();
+  const { subCategorySlug } = useParams();
   // const dispatch = useDispatch();
   const { path } = useRouteMatch();
 
@@ -36,9 +37,11 @@ const CategoryPage = () => {
     <div className="category-container">
       {/* <Filter handleOnChange={handleOnChange} filters={filterState} />
       <ProductList category_slug={categorySlug} /> */}
+      {/* <h1>{categorySlug}</h1> */}
       <h1>{categorySlug}</h1>
+      <h2>{subCategorySlug}</h2>
       <Switch>
-        <Route path={`${path}/:categorySlug`}>
+        <Route path={`${path}/:subCategorySlug`}>
           <CategoryPage />
         </Route>
       </Switch>

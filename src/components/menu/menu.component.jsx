@@ -7,14 +7,14 @@ const Menu = ({ items, is_children, prevItem }) => {
     <>
       <ul className={is_children ? "nav-list__drop" : "nav-list"}>
         {items.map((item) => (
-          <li key={item.name} className="nav-list__item">
+          <li key={item.slug} className="nav-list__item">
             {item.parent === null && <> {item.display_name}</>}
             {item.parent !== null && (
               <Link
                 to={
                   prevItem.parent === null
-                    ? `/${item.slug}`
-                    : `/${prevItem.slug}/${item.slug}`
+                    ? `/categories/${item.slug}`
+                    : `/categories/${prevItem.slug}/${item.slug}`
                 }
               >
                 {item.display_name}
